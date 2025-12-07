@@ -1,0 +1,13 @@
+Month,Revenue,Expenses,Units_Sold,Category
+Jan,12000,5000,320,Electronics
+Feb,15000,7000,400,Electronics
+Mar,18000,9000,450,Electronics
+Apr,10000,4000,300,Home
+May,13000,6000,350,Home
+Jun,16000,8000,420,Home
+Jul,20000,10000,500,Furniture
+Aug,22000,11000,530,Furniture
+Sep,19000,9000,480,Furniture
+Oct,14000,7000,330,Clothing
+Nov,17000,8000,390,Clothing
+Dec,25000,12000,600,Clothing
