@@ -1,13 +1,8 @@
-from xml.sax.handler import property_interning_dict
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import random as rd
-
-from sympy.integrals.meijerint_doc import category
-from sympy.physics.units.systems.si import units
-
+import os
 # x = np.arange(1,11)
 # y = x*2
 # print(y)    
@@ -191,5 +186,39 @@ from sympy.physics.units.systems.si import units
 # data = sales['Revenue'] - sales['Expenses']
 # plt.plot(month,data, marker='o')
 # plt.show()
+word_to_num = {
+    "Sixty": 60,
+    "Thirty five": 35,
+    "One": 1,
+    "No": "False"
+}
 
+# df = pd.read_csv(os.path.join('Practice_Materials','pokemon_stats.csv'))
+# df = df.fillna('None')
+# df = df.replace('none','None')
+# df = df.apply(lambda col: col.str.strip() if col.dtype == 'object' else col)
+# df = df.apply(lambda col: col.str.capitalize() if col.dtype == 'object' else col)
+# df = df.drop(index=15)
+# df = df.drop(index=12)
+# df = df.drop(index=2)
+# df = df.replace(word_to_num)
+# df = df.replace('', 'None')
+# df= df.drop(index=23)
+# df= df.drop(index=1)
+# df.to_csv(os.path.join('Practice_Materials','cleaned_pokemon_stats.csv'))
 
+pokemon_csv = pd.read_csv(os.path.join('Practice_Materials','cleaned_pokemon_stats.csv'))
+pokemon_csv.loc[pokemon_csv["Name"] == "Venusaur", "Attack"] = 82
+pokemon_csv = pokemon_csv.sort_values(by=['Type1'])
+stats_block = np.array(pokemon_csv.loc[:, "HP":"Speed"])
+pokemon_csv["Total_Stats"] = stats_block.sum(axis=1)
+all_types_stats = {}
+
+for type in pokemon_csv['Type1'].unique():
+    all_types_stats[type] = np.array(pokemon_csv.loc[pokemon_csv["Type1"] == type, "Total_Stats"]).mean()
+
+for key, value in all_types_stats.items():
+    plt.bar(key,value,label=key)
+    plt.text(key,value,f"{value:.1f}", ha="center", va="bottom")
+
+plt.show()

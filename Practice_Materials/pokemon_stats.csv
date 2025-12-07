@@ -1,45 +1,25 @@
-Name,Type1,Type2,HP,Attack,Defense,SpAtk,SpDef,Speed,Generation,Legendary
-bulbasaur,Grass,Poison,45,49,49,65,65,45,1,False
-ivysaur,Grass,Poison,60,62,63,80,80,60,1,False
-venusaur,Grass,Poison,80,82,83,100,100,80,1,False
-charmander,Fire,None,39,52,43,60,50,65,1,False
-charmeleon,Fire,None,58,64,58,80,65,80,1,False
-charizard,Fire,Flying,78,84,78,109,85,100,1,False
-squirtle,Water,None,44,48,65,50,64,43,1,False
-wartortle,Water,None,59,63,80,65,80,58,1,False
-blastoise,Water,None,79,83,100,85,105,78,1,False
-pikachu,Electric,None,35,55,40,50,50,90,1,False
-raichu,Electric,None,60,90,55,90,80,110,1,False
-sandshrew,Ground,None,50,75,85,20,30,40,1,False
-sandslash,Ground,None,75,100,110,45,55,65,1,False
-nidoran♀,Poison,None,55,47,52,40,40,41,1,False
-nidorina,Poison,None,70,62,67,55,55,56,1,False
-nidoqueen,Poison,Ground,90,82,87,75,85,76,1,False
-nidoran♂,Poison,None,46,57,40,40,40,50,1,False
-nidorino,Poison,None,61,72,57,55,55,65,1,False
-nidoking,Poison,Ground,81,102,77,85,75,85,1,False
-clefairy,Fairy,None,70,45,48,60,65,35,1,False
-clefable,Fairy,None,95,70,73,95,90,60,1,False
-vulpix,Fire,None,38,41,40,50,65,65,1,False
-ninetales,Fire,None,73,76,75,81,100,100,1,False
-jigglypuff,Normal,Fairy,115,45,20,45,25,20,1,False
-wigglytuff,Normal,Fairy,140,70,45,85,50,45,1,False
-zubat,Poison,Flying,40,45,35,30,40,55,1,False
-golbat,Poison,Flying,75,80,70,65,75,90,1,False
-oddish,Grass,Poison,45,50,55,75,65,30,1,False
-gloom,Grass,Poison,60,65,70,85,75,40,1,False
-vileplume,Grass,Poison,75,80,85,110,90,50,1,False
-paras,Bug,Grass,35,70,55,45,55,25,1,False
-parasect,Bug,Grass,60,95,80,60,80,30,1,False
-venonat,Bug,Poison,60,55,50,40,55,45,1,False
-venomoth,Bug,Poison,70,65,60,90,75,90,1,False
-diglett,Ground,None,10,55,25,35,45,95,1,False
-dugtrio,Ground,None,35,100,50,50,70,120,1,False
-meowth,Normal,None,40,45,35,40,40,90,1,False
-persian,Normal,None,65,70,60,65,65,115,1,False
-mewtwo,Psychic,None,106,110,90,154,90,130,1,True
-mew,Psychic,None,100,100,100,100,100,100,1,True
-articuno,Ice,Flying,90,85,100,95,125,85,1,True
-zapdos,Electric,Flying,90,90,85,125,90,100,1,True
-moltres,Fire,Flying,90,100,90,125,85,90,1,True
-dragonite,Dragon,Flying,91,134,95,100,100,80,1,False
+Name  ,Type1 , Type2,HP ,Attack,Defense,SpAtk,SpDef,Speed,Generation ,Legendary
+Bulbasaur , Grass   ,poison,45,49,49,65,65,45,1,False
+Bulba saur , Grass   ,poison ,45,49,49,65,65,45, 1 , FALSE
+Ivisaur,Grass, Poison,60,62,63,80,80,60,1, false
+ivysaur , grass ,poison, SIXTY ,62,63,80,80,60,1,false
+Venusaur,Grass ,Poison,80,,83,100,100,80,1,False
+  Charmander,fire,,39,52,43,60,50,65,1,No
+charMELeon , Fire,None,58,64,58,80,65,80,1,fALSE
+Charizard, Fire , Flying ,78,84,78,109,85,100,ONE,False
+Squirtle ,water,   ,44 ,48,65,50,64,43,1,False
+wartortle,Water,none, 59 ,63,80,65,80,58,1,False
+Blastoise, WATER, None ,79,83,100,85,105,78,1,false
+Pikachu , Electric,   ,35,55,40,50,50,90,1,false
+PIKACHU, Electric ,None,THIRTY FIVE,55,40,50,50,90,1, FALSE
+Raichu ,Electric,None,60,90,55,90,80,110,1,false
+sandshrew,GROund,None,50,75,85,20,30,40,1,false
+,, , , , , , , , ,
+paras,Bug ,Grass,35,70,55,45,55,25,1,false
+parasect,Bug,Grass,60,95,80,60,80,30,1,false
+VENOMOTH, bug , poison ,70,65,60,90,75,90,1,false
+Mewtwo, Psychic ,NA,106,110,90,154,90,130,1, TRUE
+Mew, Psychic  ,None,100,100,100,100,100,100, 1, true
+Dragonite ,dragon ,flying,91,134,95,100,100,80,1,false
+Dugtrio , Ground ,None,35,100,50,50,70,120,1,false
+Charizard , fire, FLying ,78,84,78,109,85,100,1,false
