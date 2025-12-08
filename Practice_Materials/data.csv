@@ -1,0 +1,11 @@
+Name,Department,Salary,Experience,Age,Country
+Arjun,Engineering,90000,3,25,India
+Meera,Engineering,120000,5,28,India
+Vikram,Engineering,70000,1,23,India
+Ayesha,Marketing,65000,4,29,UAE
+Rohan,Marketing,,2,26,India
+Fatima,HR,55000,6,32,UK
+Imran,HR,60000,7,,India
+John,Sales,45000,2,24,USA
+Sarah,Sales,80000,5,31,USA
+Zara,Engineering,abc,4,27,India

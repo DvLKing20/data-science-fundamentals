@@ -3,6 +3,9 @@ import numpy as np
 import pandas as pd
 import random as rd
 import os
+
+from numpy.testing.print_coercion_tables import print_new_cast_table
+
 # x = np.arange(1,11)
 # y = x*2
 # print(y)    
@@ -207,18 +210,110 @@ word_to_num = {
 # df= df.drop(index=1)
 # df.to_csv(os.path.join('Practice_Materials','cleaned_pokemon_stats.csv'))
 
-pokemon_csv = pd.read_csv(os.path.join('Practice_Materials','cleaned_pokemon_stats.csv'))
-pokemon_csv.loc[pokemon_csv["Name"] == "Venusaur", "Attack"] = 82
-pokemon_csv = pokemon_csv.sort_values(by=['Type1'])
-stats_block = np.array(pokemon_csv.loc[:, "HP":"Speed"])
-pokemon_csv["Total_Stats"] = stats_block.sum(axis=1)
-all_types_stats = {}
+# pokemon_csv = pd.read_csv(os.path.join('Practice_Materials','cleaned_pokemon_stats.csv'))
+# pokemon_csv.loc[pokemon_csv["Name"] == "Venusaur", "Attack"] = 82
+# pokemon_csv = pokemon_csv.sort_values(by=['Type1'])
+# stats_block = np.array(pokemon_csv.loc[:, "HP":"Speed"])
+# pokemon_csv["Total_Stats"] = stats_block.sum(axis=1)
+# all_types_stats = {}
+#
+# for type in pokemon_csv['Type1'].unique():
+#     all_types_stats[type] = np.array(pokemon_csv.loc[pokemon_csv["Type1"] == type, "Total_Stats"]).mean()
+#
+# for key, value in all_types_stats.items():
+#     plt.bar(key,value,label=key)
+#     plt.text(key,value,f"{value:.1f}", ha="center", va="bottom")
+#
+# plt.show()
 
-for type in pokemon_csv['Type1'].unique():
-    all_types_stats[type] = np.array(pokemon_csv.loc[pokemon_csv["Type1"] == type, "Total_Stats"]).mean()
+# df = pd.read_csv(os.path.join('Practice_Materials','pokemon_meta.csv'))
+# OPS = {}
+# DPS = {}
+# type_strength = {}
+# for type in df['Type1'].unique():
+#     OPS[type] = np.array(df.loc[df['Type1'] == type, ['Attack', 'SpAtk', 'Speed']]*[0.6,0.4,0.5]).sum(axis=1)
+#     DPS[type] = np.array(df.loc[df['Type1'] == type, ['Defense', 'SpDef', 'HP']]*[0.7,0.3,0.2]).sum(axis=1)
+#     type_strength[type] = np.mean(OPS[type] + DPS[type])
+#
+# # plt.figure(figsize=(8,6))
+# # for key,value in type_strength.items():
+# #     plt.barh(key, value, label=key)
+# #     plt.text(value,key,f"{value:.2f}", ha='left', va='center')
+# # plt.title('Type Strength')
+# # plt.legend(loc='upper left', fontsize='8')
+# # plt.ylabel('Type')
+# # plt.xlabel('Score')
+# # plt.show()
 
-for key, value in all_types_stats.items():
-    plt.bar(key,value,label=key)
-    plt.text(key,value,f"{value:.1f}", ha="center", va="bottom")
+# import os
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# import numpy as np
+#
+#
+# df = pd.read_csv(os.path.join('Practice_Materials', 'data.csv'))
+# df = df.sort_values(by=['Department'])
+# df = df.replace('abc', np.nan)
+# df['Salary'] = pd.to_numeric(df['Salary'], errors='coerce')
+# salary = df.groupby('Department')['Salary'].transform('mean')
+# df['Salary'] = df['Salary'].fillna(salary).astype(int)
+# df['Age'] = df['Age'].fillna(df['Age'].mean()).astype(int)
+# print(df)
+# #%%
+# group = df.groupby('Department')
+# salary = group['Salary'].mean().astype(int)
+# experience = group['Experience'].mean()
+# Department_size = group.size()
+# height = 0.25
+# y = np.arange(len(experience.index))
+# plt.barh(y,experience.values,height=height,label='Experience')
+# plt.barh(y-height, Department_size.values,height=height ,label='Workers')
+# plt.yticks(y,experience.index)
+# plt.xlabel('Overall values')
+# plt.legend()
+# plt.ylabel('Workers')
+# plt.title('Department Overview')
+# plt.show()
+# plt.plot(salary.index,salary.values, marker='o')
+# plt.xlabel('Workers Fields')
+# plt.ylabel('Workers Average Salary')
+# plt.title('Department vs Workers')
+# plt.show()
 
+
+#picking top 3
+df = pd.read_csv(os.path.join('Practice_Materials', 'data.csv'))
+df = df.sort_values(by=['Department'])
+df = df.replace('abc', np.nan)
+df['Salary'] = pd.to_numeric(df['Salary'], errors='coerce')
+salary = df.groupby('Department')['Salary'].transform('mean')
+df['Salary'] = df['Salary'].fillna(salary).astype(int)
+df['Age'] = df['Age'].fillna(df['Age'].mean()).astype(int)
+print(df)
+
+df = df.sort_values(by=['Salary'],ascending=False)
+df = df.set_index('Name')
+department = df.groupby("Department")
+top_earners = department["Salary"].nlargest(3)
+earners = {}
+i = 0
+names = []
+salaries = []
+for department in df["Department"].unique():
+    names = top_earners.loc[department,:].index
+    salaries = top_earners.loc[department,:].values
+    earners[department] = [names, salaries]
+
+height = 0.35
+start = 0
+all_names = []
+for department in df["Department"].unique():
+    size = len(earners[department][0])
+    y = np.arange(start,size+start)
+    plt.barh(y,earners[department][1], label=department, height=height)
+    all_names.extend(earners[department][0])
+    start += len(y)
+all_y = np.arange(len(all_names))
+plt.yticks(all_y,all_names)
+plt.legend()
 plt.show()
