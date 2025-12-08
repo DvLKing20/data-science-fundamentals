@@ -1,0 +1,16 @@
+Name,Department,Salary,Experience,Age,Country,Rating
+Arjun,Engineering,95000,3,25,India,4.5
+Meera,Engineering,120k,5,28,India,5
+Rohit,Engineering,abc,2,27,India,4.2
+Zara,Engineering, 89000 ,four,26,India, 4
+Ayesha,Marketing,67000,4,29,UAE,4.8
+Rohan,Marketing, 65000,2 years,26,India,4.1
+Fatima,HR,55000,6,32,UK,missing
+Imran,HR,60000,7,,India,3.9
+John,Sales,45000,2,24,USA,3.5
+Sarah,Sales,85000,5 yrs,31,USA, 4.7
+Lee,Sales,78000,   4,  30 ,China,4
+Vikram,Engineering,70000,,23,India,3.8
+Priya,Marketing,nan,3,27,India,4.3
+Harsh,HR,58000,8,thirty,India,4.0
+
