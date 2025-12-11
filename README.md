@@ -9,7 +9,7 @@ as part of my journey toward ML engineering.
 - **pandas_basics.py** – CSV loading, DataFrames, groupby, filtering
 - **matplotlib_basics.py** – bar charts, scatter plots, histograms
 - **pokemon.csv** – data file used for experiments
-- **ML Models** - Writing my own ml models,added LinearRegression Currently!
+- **ML Models** - Writing my own ml models from Scratch,added LinearRegression Currently!
 
 
 ## Goals
